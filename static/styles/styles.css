@@ -50,3 +50,7 @@ form {
   background-color: black;
   color: white;
 }
+
+#sign-up, #support {
+  max-width: 800px;
+}
