@@ -1,0 +1,52 @@
+/* Styles */
+
+body {
+  font-family: Roboto;
+}
+
+h1 {
+  font-size: 58px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+p, button {
+  font-size: 22px;
+}
+
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+form {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 378px;
+  border-radius: 10px;
+}
+
+.button, input, textarea {
+  border: none;
+  border-radius: 10px;
+}
+
+.button-dark {
+  background-color: black;
+  color: white;
+}
+
+.header-font {
+  font-size: 36px;
+}
+
+.text-font {
+  font-size: 24px;
+}
+
+#hero, #value {
+  background-color: black;
+  color: white;
+}
