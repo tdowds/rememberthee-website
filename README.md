@@ -16,7 +16,7 @@ Reference Documentation:
 
 Clone the git repository into your file system and navigate to the project root:
 ```
-% git clone
+% git clone https://github.com/tdowds/rememberthee-website.git
 ```
 
 Make sure you have Python 3 installed on your machine.
