@@ -1,14 +1,16 @@
 from flask import Flask, jsonify, render_template, request
 from flask_mail import Mail, Message
 
+import settings
+
 app = Flask(__name__)
 
 # should move a lot of this into a settings file to protect the password
-app.config['MAIL_SERVER']='mail.privateemail.com'
-app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'trevor@rememberthee.com'
-app.config['MAIL_PASSWORD'] = 'PASSWORD'
-app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_SERVER'] = settings.MAIL_SERVER
+app.config['MAIL_PORT'] = settings.MAIL_PORT
+app.config['MAIL_USERNAME'] = settings.MAIL_USERNAME
+app.config['MAIL_PASSWORD'] = settings.MAIL_PASSWORD
+app.config['MAIL_USE_SSL'] = settings.MAIL_USE_SSL
 
 mail = Mail(app)
 
