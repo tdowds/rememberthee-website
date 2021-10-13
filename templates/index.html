@@ -97,7 +97,7 @@
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
               </div>
               <div class="px-3">
-                <textarea class="form-control" id="message" placeholder="Message"></textarea>
+                <textarea class="form-control" id="inputMessage" placeholder="Message"></textarea>
               </div>
               <div class="p-3">
                 <button type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
@@ -132,9 +132,28 @@
       }
 
       function submitGetRememberTheeForm(argument) {
-        // Send form contents to server to send email
-        document.getElementById("sign-up-form").hidden = true;
-        document.getElementById("thank-you").hidden = false;
+        const data = {
+          name: document.getElementById('inputName').value,
+          email: document.getElementById('inputEmail').value,
+          message: document.getElementById('inputMessage').value,
+          browser: window.navigator.userAgent
+        };
+
+        fetch('/sign-up', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("sign-up-form").hidden = true;
+          document.getElementById("thank-you").hidden = false;
+        })
+        .catch(error => {
+          console.log(error);
+        });
       }
     </script>
   </body>
