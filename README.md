@@ -70,4 +70,4 @@ Then execute `flask run` and navigate to `localhost:5000` in your browser.
 
 ## Deployment
 https://help.pythonanywhere.com/pages/UploadingAndDownloadingFiles
-- Need to automatically detect perform new packages downloads and package updates
+- Need to automatically perform new packages downloads and package updates
