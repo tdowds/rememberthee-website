@@ -127,6 +127,7 @@
 
     <script type="text/javascript">
       function clickGetRememberThee(argument) {
+        fetch('/get-remember-thee', {method: 'POST'});
         document.getElementById("sign-up-button").hidden = true;
         document.getElementById("sign-up-form").hidden = false;
       }
