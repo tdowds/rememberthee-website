@@ -109,11 +109,12 @@ button {
 button:hover {
   background-image: linear-gradient(
     to right,
-    rgb(0, 114, 66) 0%,
-    rgb(4, 109, 91) 100%
+    #0b0b0c 0%,
+    #1a1a1b 100%
   );
   color: white;
 }
+
 
 hr {
   margin-bottom: 20px;
@@ -124,8 +125,8 @@ hr {
 }
 
 #error_message{
-  margin-bottom: 20px;
-  color: #fe8b8e;
+  margin-bottom: 15px;
+  color: #f44336;
   padding: 0px;
   text-align: center;
   font-size: 14px;
@@ -141,7 +142,7 @@ hr {
     position: absolute;
     bottom: 5px;
     right: 30px;
-    color: #aaa;
+    color: #60a563;
   }
   textarea {
     width: 100%;
