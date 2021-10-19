@@ -1,51 +1,68 @@
-// function clickGetRememberThee(argument) {
-//     document.getElementById("sign-up-button").hidden = true;
-//     document.getElementById("sign-up-form").hidden = false;
-//   }
-
-//   function submitGetRememberTheeForm(argument) {
-//     const data = {
-//       name: document.getElementById('inputName').value,
-//       email: document.getElementById('inputEmail').value,
-//       message: document.getElementById('inputMessage').value,
-//       browser: window.navigator.userAgent
-//     };
-
-//     fetch('/sign-up', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(data)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//       document.getElementById("sign-up-form").hidden = true;
-//       document.getElementById("thank-you").hidden = false;
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-//   }
+function clickGetRememberThee(argument) {
+    document.getElementById("sign-up-button").hidden = true;
+    document.getElementById("sign-up-form").hidden = false;
+  }
 
 
-// //   function validateForm() {
-// //     let x = document.forms["sign-up"]["fullName"].value;
-// //     if (x == "") {
-// //       alert("Name must be filled out");
-// //       return false;
-// //     }
-// //   }
 
-// // function validateEmail() {
-// //     var emailID = document.myForm.EMail.value;
-// //     atpos = emailID.indexOf("@");
-// //     dotpos = emailID.lastIndexOf(".");
+  //Character Countdown
+  document.getElementById('inputMessage').onkeyup = characterCount;
+  function characterCount() {
+    var container = this.nextSibling;
+    if (!container || container.className !== 'counter') {
+      container = document.createElement('div');
+      container.className = 'counter';
+      this.parentNode.insertBefore(container, this.nextSibling);
+    }
+    container.innerHTML = this.value.length;
+  }
+  characterCount({
+    target: document.getElementById('counter'),
+    direction: 'down',
+    max: 300
 
-// //     if (atpos < 1 || ( dotpos - atpos < 2 )) {
-// //        alert("Please enter correct email ID")
-// //        document.myForm.EMail.focus() ;
-// //        return false;
-// //     }
-// //     return( true );
-// //  }
+  });
+
+  function submitGetRememberTheeForm(argument) {
+    const inputName = document.getElementById("inputName").value;
+    const inputEmail = document.getElementById("inputEmail").value;
+    const inputMessage = document.getElementById("inputMessage").value;
+    const error_message = document.getElementById("error_message");
+
+    error_message.style.padding = "10px";
+    var text;
+    if (inputName.length < 5) {
+      text = "Please Enter a Valid Name";
+      error_message.innerHTML = text;
+      return false;
+    }
+    if (inputEmail.indexOf("@") == -1) {
+      text = "Please Enter a Valid Email";
+      error_message.innerHTML = text;
+      return false;
+    }
+    else {
+      const data = {
+        name: inputName,
+        email: inputEmail,
+        message: inputMessage,
+        browser: window.navigator.userAgent
+      };
+
+      fetch('/sign-up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("sign-up-form").hidden = true;
+          document.getElementById("thank-you").hidden = false;
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
