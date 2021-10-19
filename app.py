@@ -5,7 +5,6 @@ import settings
 
 app = Flask(__name__)
 
-# should move a lot of this into a settings file to protect the password
 app.config['MAIL_SERVER'] = settings.MAIL_SERVER
 app.config['MAIL_PORT'] = settings.MAIL_PORT
 app.config['MAIL_USERNAME'] = settings.MAIL_USERNAME
@@ -17,6 +16,10 @@ mail = Mail(app)
 @app.route("/")
 def index():
 	return render_template('index.html')
+
+@app.route("/get-remember-thee", methods=['POST'])
+def get_remember_thee():
+	return jsonify(success=True)
 
 @app.route("/sign-up", methods=['POST'])
 def sign_up():
