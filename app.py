@@ -23,7 +23,7 @@ def sign_up():
 	try:
 		data = request.get_json()
 		subject = "User Sign Up: " + data['name']
-		message = Message(subject, sender="trevor@rememberthee.com", recipients=["trevor@rememberthee.com"])
+		message = Message(subject, sender="michael.yaacoub7@gmail.com", recipients=["michael.yaacoub7@gmail.com"])
 		message.html = """
 		<ul>
 			<li>Name: {name}</li>
