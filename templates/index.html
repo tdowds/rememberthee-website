@@ -91,13 +91,13 @@
             <p>Remember Thee is still in the works. Please fill out the form below if you are interested in being one of the first to try Remember Thee before we release it to the public.</p>
             <form>
               <div class="pt-3 px-3">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+                <input type="text" class="form-control" id="inputName" placeholder="Name" maxlength="50" required>
               </div>
               <div class="p-3">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                <input type="email" class="form-control" id="inputEmail" placeholder="Email" maxlength="50" required>
               </div>
               <div class="px-3">
-                <textarea class="form-control" id="inputMessage" placeholder="Message"></textarea>
+                <textarea class="form-control" id="inputMessage" placeholder="Message" maxlength="300"></textarea>
               </div>
               <div class="p-3">
                 <button type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
