@@ -47,6 +47,18 @@ form {
   font-size: 24px;
 }
 
+.number {
+  display: flex;
+  background-color: rgb(196, 196, 196);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
 #hero, #value {
   background-color: black;
   color: white;
