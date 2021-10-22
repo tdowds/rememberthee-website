@@ -12,7 +12,8 @@ h3 {
   font-size: 36px;
 }
 
-p, button {
+p,
+button {
   font-size: 22px;
 }
 
@@ -28,7 +29,9 @@ form {
   border-radius: 10px;
 }
 
-.button, input, textarea {
+.button,
+input,
+textarea {
   border: none;
   border-radius: 10px;
 }
@@ -46,11 +49,22 @@ form {
   font-size: 24px;
 }
 
-#hero, #value {
+#hero,
+#value {
   background-color: black;
   color: white;
 }
 
-#sign-up, #support {
+#sign-up,
+#support {
   max-width: 800px;
+}
+
+#error_message {
+  margin-bottom: 20px;
+  color: #ff0f0f;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
 }
