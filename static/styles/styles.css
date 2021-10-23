@@ -67,3 +67,11 @@ form {
 #sign-up, #support, #contact-us {
   max-width: 800px;
 }
+#error_message {
+  margin-bottom: 20px;
+  color: #ff0f0f;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
