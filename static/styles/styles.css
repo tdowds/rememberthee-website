@@ -12,9 +12,9 @@ h3 {
   font-size: 36px;
 }
 
-p,
-button {
+p, button {
   font-size: 22px;
+  margin-bottom: 0px;
 }
 
 section {
@@ -29,9 +29,7 @@ form {
   border-radius: 10px;
 }
 
-.button,
-input,
-textarea {
+.button, input, textarea {
   border: none;
   border-radius: 10px;
 }
@@ -49,14 +47,24 @@ textarea {
   font-size: 24px;
 }
 
-#hero,
-#value {
+.number {
+  display: flex;
+  background-color: rgb(196, 196, 196);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+#hero, #value {
   background-color: black;
   color: white;
 }
 
-#sign-up,
-#support {
+#sign-up, #support, #contact-us {
   max-width: 800px;
 }
 
