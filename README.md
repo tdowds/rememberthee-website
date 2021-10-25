@@ -14,9 +14,15 @@ Reference Documentation:
 - [Flask Installation](https://flask.palletsprojects.com/en/2.0.x/installation/)
 - [venv](https://docs.python.org/3/library/venv.html#module-venv)
 
-Clone the git repository into your file system and navigate to the project root:
+Fork and then clone your fork into your file system and navigate to the project root:
 ```
-% git clone https://github.com/tdowds/rememberthee-website.git
+% git clone https://github.com/{your_username}/rememberthee-website.git
+% cd rememberthee-website
+```
+
+Set the upstream remote
+```
+% git remote add upstream https://github.com/tdowds/rememberthee-website.git
 ```
 
 Make sure you have Python 3 installed on your machine.
