@@ -107,7 +107,7 @@
               </div>
               <div class="pt-3" id="error_message" hidden="true"></div>
               <div class="p-3">
-                <button type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
+                <button id="submit-button" type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
               </div>
             </form>
           </div>
@@ -153,7 +153,8 @@
         const email = document.getElementById("inputEmail").value;
         const message = document.getElementById("inputMessage").value;
 
-        const error_message = document.getElementById("error_message");
+        // Validate inputs
+        var error_message = document.getElementById("error_message");
         var text;
         if (name.length == "") {
           text = "Name is required";
@@ -170,6 +171,12 @@
           error_message.hidden = false;
           return false;
         }
+
+        // Send inputs to server
+        var submit_button = document.getElementById("submit-button");
+        submit_button.disabled = true;
+        submit_button.innerHTML = "Submitting...";
+        submit_button.style.opacity = .5;
 
         const data = {
           name: name,
