@@ -95,8 +95,6 @@
 
           <div id="sign-up-form" hidden="true">
             <p>Remember Thee is still in the works. Please fill out the form below if you are interested in being one of the first to try Remember Thee before we release it to the public.</p>
-            <br>
-            <div id="error_message"></div>
             <form>
               <div class="pt-3 px-3">
                 <input type="text" class="form-control" id="inputName" placeholder="Name" maxlength="50" required>
@@ -107,6 +105,7 @@
               <div class="px-3">
                 <textarea class="form-control" id="inputMessage" placeholder="Message" maxlength="300"></textarea>
               </div>
+              <div id="error_message"></div>
               <div class="p-3">
                 <button type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
               </div>
@@ -155,9 +154,9 @@
         const message = document.getElementById("inputMessage").value;
         const error_message = document.getElementById("error_message");
 
-        var text;
+      var text;
       if (name.length == "") {
-        text = "Name is required";
+        text = "Name is Required";
         error_message.innerHTML = text;
         return false;
       }
@@ -166,8 +165,7 @@
         error_message.innerHTML = text;
         return false;
       }
-      else {
-        const data = {
+      const data = {
           name: name,
           email: email,
           message: message,
@@ -180,16 +178,14 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
-        })
-          .then(response => response.json())
+        }).then(response => response.json())
           .then(data => {
             document.getElementById("sign-up-form").hidden = true;
             document.getElementById("thank-you").hidden = false;
           })
           .catch(error => {
             console.log(error);
-          });
-      }
+        });
       }
     </script>
   </body>
