@@ -155,17 +155,17 @@
         const error_message = document.getElementById("error_message");
 
       var text;
-      if (name.length == "") {
-        text = "Name is Required";
-        error_message.innerHTML = text;
-        return false;
-      }
-      if (email.indexOf("@") == -1) {
-        text = "Please Enter a Valid Email";
-        error_message.innerHTML = text;
-        return false;
-      }
-      const data = {
+        if (name.length == "") {
+         text = "Name is Required";
+         error_message.innerHTML = text;
+          return false;
+        }
+        if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+          text = "Please Enter a Valid Email";
+          error_message.innerHTML = text;
+            return false;
+        }
+        const data = {
           name: name,
           email: email,
           message: message,
