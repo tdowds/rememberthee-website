@@ -105,6 +105,7 @@
               <div class="px-3">
                 <textarea class="form-control" id="inputMessage" placeholder="Message" maxlength="300"></textarea>
               </div>
+              <div id="error_message"></div>
               <div class="p-3">
                 <button type="button" class="button button-dark" onclick="submitGetRememberTheeForm()">Submit</button>
               </div>
@@ -148,10 +149,26 @@
       }
 
       function submitGetRememberTheeForm(argument) {
+        const name = document.getElementById("inputName").value;
+        const email = document.getElementById("inputEmail").value;
+        const message = document.getElementById("inputMessage").value;
+        const error_message = document.getElementById("error_message");
+
+      var text;
+        if (name.length == "") {
+         text = "Name is Required";
+         error_message.innerHTML = text;
+          return false;
+        }
+        if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+          text = "Please Enter a Valid Email";
+          error_message.innerHTML = text;
+            return false;
+        }
         const data = {
-          name: document.getElementById('inputName').value,
-          email: document.getElementById('inputEmail').value,
-          message: document.getElementById('inputMessage').value,
+          name: name,
+          email: email,
+          message: message,
           browser: window.navigator.userAgent
         };
 
@@ -161,14 +178,13 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
-          document.getElementById("sign-up-form").hidden = true;
-          document.getElementById("thank-you").hidden = false;
-        })
-        .catch(error => {
-          console.log(error);
+        }).then(response => response.json())
+          .then(data => {
+            document.getElementById("sign-up-form").hidden = true;
+            document.getElementById("thank-you").hidden = false;
+          })
+          .catch(error => {
+            console.log(error);
         });
       }
     </script>
