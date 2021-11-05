@@ -38,6 +38,7 @@ def sign_up():
 		mail.send(message)
 	except Exception as e:
 		# would be great to have logs here
+		print("Form could not load, server error!")
 		pass
 	finally:
 		return jsonify(success=True)
