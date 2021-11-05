@@ -114,7 +114,10 @@
             <p class="pb-3">Remember Thee is still in the works. Please fill out the form below if you are interested in being one of the first to try Remember Thee before we release it to the public.</p>
             <form>
               <div class="pt-3 px-3">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" maxlength="50" required>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" maxlength="20" required>
+              </div>
+              <div class="pt-3 px-3">
+                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" maxlength="20" required>
               </div>
               <div class="p-3">
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email" maxlength="50" required>
@@ -166,15 +169,23 @@
       }
 
       function submitGetRememberTheeForm(argument) {
-        const name = document.getElementById("inputName").value;
+        const firstName = document.getElementById("inputFirstName").value;
+        const lastName = document.getElementById("inputLastName").value;
         const email = document.getElementById("inputEmail").value;
         const message = document.getElementById("inputMessage").value;
 
         // Validate inputs
         var error_message = document.getElementById("error_message");
         var text;
-        if (name.length == "") {
-          text = "Name is required";
+        if (firstName.length == "") {
+          text = "First name is required";
+          error_message.innerHTML = text;
+          error_message.hidden = false;
+          return false;
+        }
+
+        if(lastName.length == "") {
+          text = "Last name is required";
           error_message.innerHTML = text;
           error_message.hidden = false;
           return false;
@@ -196,7 +207,8 @@
         submit_button.style.opacity = .5;
 
         const data = {
-          name: name,
+          firstName: firstName,
+          lastName: lastName,
           email: email,
           message: message,
           browser: window.navigator.userAgent
