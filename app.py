@@ -25,7 +25,7 @@ def get_remember_thee():
 def sign_up():
 	try:
 		data = request.get_json()
-		subject = "User Sign Up: " + data['firstName', 'lastName']
+		subject = "User Sign Up: " + data['firstName'] + " " + data['lastName']
 		message = Message(subject, sender="trevor@rememberthee.com", recipients=["trevor@rememberthee.com"])
 		message.html = """
 		<ul>
