@@ -40,6 +40,8 @@ def sign_up():
 		# would be great to have logs here
 		print("Form could not load, server error!")
 		pass
+	else:
+		return jsonify(success=False)
 	finally:
 		return jsonify(success=True)
 
