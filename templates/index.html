@@ -227,7 +227,12 @@
           document.getElementById("thank-you").hidden = false;
         })
         .catch(error => {
-          console.log(error);
+          text = 'Something went wrong. Please try again or contact help@rememberthee.com.';
+          error_message.innerHTML = text;
+          error_message.hidden = false;
+          submit_button.disabled = false;
+          submit_button.innerHTML = "Submit";
+          submit_button.style.opacity = 1;
         });
       }
     </script>
