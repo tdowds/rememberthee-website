@@ -23,26 +23,18 @@ def get_remember_thee():
 
 @app.route("/sign-up", methods=['POST'])
 def sign_up():
-	try:
-		data = request.get_json()
-		subject = "User Sign Up: " + data['firstName'] + " " + data['lastName']
-		message = Message(subject, sender="trevor@rememberthee.com", recipients=["trevor@rememberthee.com"])
-		message.html = """
-		<ul>
-			<li>First Name: {firstName}</li>
-			<li>Last Name: {lastName}</li>
-			<li>Email: {email}</li>
-			<li>Message: {message}</li>
-			<li>Browser: {browser}</li>
-		</ul>
-		""".format(**data)
-		mail.send(message)
-	except Exception as e:
-		# would be great to have logs here
-		print("Form could not load, server error!")
-		pass
-	else:
-		return jsonify(success=False)
-	finally:
-		return jsonify(success=True)
+	data = request.get_json()
+	subject = "User Sign Up: " + data['firstName'] + " " + data['lastName']
+	message = Message(subject, sender="trevor@rememberthee.com", recipients=["trevor@rememberthee.com"])
+	message.html = """
+	<ul>
+		<li>First Name: {firstName}</li>
+		<li>Last Name: {lastName}</li>
+		<li>Email: {email}</li>
+		<li>Message: {message}</li>
+		<li>Browser: {browser}</li>
+	</ul>
+	""".format(**data)
+	mail.send(message)
 
+	return jsonify(success=True)
