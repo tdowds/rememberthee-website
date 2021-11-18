@@ -146,6 +146,12 @@
           <p>Please keep Remember Thee and those working on it in your prayers. Our hope is that Remember Thee will draw you and those who use it into a closer relationship with God through His Son Jesus Christ, and support the work of God's kingdom here on earth.</p>
         </div>
       </div>
+      <div class="emoji">
+        <input type="checkbox" class="input" id="r10" onclick="clickPrayerButton()">
+        <label for="r10" class="react" style="--border-color: #3d2222; --dot-color1: #C3FFB9; --dot-color2: #E3C0FF;">
+          <i data-icon="🙏"></i>
+        </label>
+      </div>
     </section>
 
     <section id="contact-us" class="text-center container">
@@ -166,6 +172,11 @@
         fetch('/get-remember-thee', {method: 'POST'});
         document.getElementById("sign-up-button").hidden = true;
         document.getElementById("sign-up-form").hidden = false;
+      }
+
+      function clickPrayerButton() {
+        fetch('/prayer-button', {method: 'POST'});
+        console.log("success!!")
       }
 
       function submitGetRememberTheeForm(argument) {
