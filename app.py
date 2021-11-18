@@ -37,4 +37,10 @@ def sign_up():
 	""".format(**data)
 	mail.send(message)
 
+	subject= "Thank you for siging up for Remember Thee"
+	message = Message(subject, sender='trevor@rememberthee.com', recipients=[data['email']])
+	message.html = render_template('welcome_email.html', firstName=data['firstName'])
+	mail.send(message)
+	print('success!!')
+
 	return jsonify(success=True)
