@@ -21,7 +21,7 @@ def index():
 def get_remember_thee():
 	return jsonify(success=True)
 
-@app.route("/prayer-button", methods=['POST'])
+@app.route("/pray", methods=['POST'])
 def prayer_button():
 	print('prayer successed!!')
 	return jsonify(success=True)

@@ -148,7 +148,7 @@
       </div>
       <div class="emoji">
         <input type="checkbox" class="input" id="r10" onclick="clickPrayerButton()">
-        <label for="r10" class="react" style="--border-color: #3d2222; --dot-color1: #C3FFB9; --dot-color2: #E3C0FF;">
+        <label for="r10" class="react" style="--border-color: #318bb9; --dot-color1: #C3FFB9; --dot-color2: #E3C0FF;">
           <i data-icon="🙏"></i>
         </label>
       </div>
@@ -175,8 +175,7 @@
       }
 
       function clickPrayerButton() {
-        fetch('/prayer-button', {method: 'POST'});
-        console.log("success!!")
+        fetch('/pray', {method: 'POST'});
       }
 
       function submitGetRememberTheeForm(argument) {
