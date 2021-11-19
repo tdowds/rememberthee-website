@@ -43,3 +43,7 @@ def sign_up():
 	mail.send(message)
 
 	return jsonify(success=True)
+
+@app.route("/share", methods=['POST'])
+def share():
+	return jsonify(success=True)
