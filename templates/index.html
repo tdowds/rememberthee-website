@@ -148,10 +148,6 @@
       </div>
       <div>
         <button class="prayerButton" onclick="clickPrayerButton()">🙏</button>
-        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
-          <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-        </svg>
       </div>
     </section>
 
@@ -169,17 +165,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-      const button = document.querySelector('.prayerButton'),
-        checkmark = document.querySelector('.checkmark'),
-        checkmarkCheck = document.querySelector('.checkmark-check'),
-        checkmarkCircle = document.querySelector('.checkmark-circle');
-
-        button.addEventListener( 'click', function() {
-        checkmark.classList.toggle('is-anim');
-        checkmarkCheck.classList.toggle('is-anim');
-        checkmarkCircle.classList.toggle('is-anim');
-      });
-
       function clickGetRememberThee(argument) {
         fetch('/get-remember-thee', {method: 'POST'});
         document.getElementById("sign-up-button").hidden = true;
