@@ -48,6 +48,14 @@ def sign_up():
 
 	return jsonify(success=True)
 
+@app.route("/add-verse", methods=['POST'])
+def add_verse():
+	return jsonify(success=True)
+
+@app.route("/read-verse", methods=['POST'])
+def read_verse():
+	return jsonify(success=True)
+
 @app.route("/share", methods=['POST'])
 def share():
 	return jsonify(success=True)
