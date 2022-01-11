@@ -39,6 +39,10 @@
           <img src="{{ url_for('static', filename='images/App Logo Dark.png') }}">
           <h1>Remember Thee</h1>
           <h3 class="p-3">Keep God's Word on hand when you need it</h3>
+          <div id="hero-hook">
+            <p class="p-1">Do you ever come across useful Bible verses but later have trouble recalling them when you need them?</p>
+            <p class="pt-1 pb-3">Remember Thee is an app that helps you recall Scripture when you need it.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -54,7 +58,7 @@
             1
           </div>
           <p class="p-3">
-            <b><u>Add</u></b> verses you want to remember. Make a note of what God is saying to you.
+            <b><u>Add</u></b> verses you want to remember.
           </p>
           <img src="{{ url_for('static', filename='images/step1-full.gif') }}" class="img-fluid">
         </div>
@@ -63,7 +67,7 @@
             2
           </div>
           <p class="p-3">
-            <b><u>Review</u></b> and be encouraged by what God has done. <b><u>Memorize</u></b> with flashcards.
+            Assign a <b><u>category</u></b> for later reference.
           </p>
           <img src="{{ url_for('static', filename='images/step2-full.gif') }}" class="img-fluid">
         </div>
@@ -72,7 +76,7 @@
             3
           </div>
           <p class="p-3">
-            <b><u>Find</u></b> verses by category. Sort by order in the Bible or when you most recently added them.
+            Quickly <b><u>find</u></b> verses by category when you need them.
           </p>
           <img src="{{ url_for('static', filename='images/step3-full.gif') }}" class="img-fluid">
         </div>
@@ -84,16 +88,16 @@
       <div class="container">
         <div class="row gx-5 row-cols-1 row-cols-lg-3">
           <div class="col py-3">
-            <h3><u>Stay Organized</u></h3>
-            <p>Keep verses you love organized in one easy-to-access place; not scattered across Bible highlights, Bible apps, notes apps, or flashcards.</p>
+            <h3><u>Quick</u></h3>
+            <p>Remember Thee has only what you put in it. No more filtering through large amounts of text in your Bible or through search results from Google or Bible apps.</p>
           </div>
           <div class="col py-3">
-            <h3><u>Be Encouraged</u></h3>
-            <p>Keep encouragement handy by having verses you love on your phone. Make a note of how God used a verse and refer back to it later.</p>
+            <h3><u>Easy</u></h3>
+            <p>Remember Thee has a simple, easy-to-use interface. You’ll find adding verses, categorizing them and looking them up to be straightforward tasks without distraction or confusion.</p>
           </div>
           <div class="col py-3">
-            <h3><u>Learn More</u></h3>
-            <p>Use categories to easily recall all the verses you know related to your study. Speak holistically to what the Bible says on a given topic.</p>
+            <h3><u>Organized</u></h3>
+            <p>Remember Thee keeps the verses you need organized on your phone. You don’t have to look through notes on your notes app or through old notebooks or notecards.</p>
           </div>
         </div>
       </div>
@@ -106,12 +110,13 @@
           <h3><u>Get Remember Thee</u></h3>
 
           <div id="sign-up-button">
-            <p class="pb-2">Please press the button below if you would like to get Remember Thee.</p>
+            <p class="pb-2">Please press the button below if you would like to download Remember Thee.</p>
             <button type="button" class="button button-dark p-2" onclick="clickGetRememberThee()">Get Remember Thee</button>
           </div>
 
           <div id="sign-up-form" hidden="true">
-            <p class="pb-3">Remember Thee is still in the works. Please fill out the form below if you are interested in being one of the first to try Remember Thee before we release it to the public.</p>
+            <p class="pb-3">Thank you for your interest.</p>
+            <p class="pb-3">Remember Thee is still a concept. However, to start building Remember Thee, we are interested in speaking with users who think it might be useful for them. If that's you, please fill out the contact form below, and we'll be in touch.</p>
             <form>
               <div class="pt-3 px-3">
                 <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" maxlength="20" required>
@@ -123,7 +128,7 @@
                 <input type="email" class="form-control" id="inputEmail" placeholder="Email" maxlength="50" required>
               </div>
               <div class="px-3">
-                <textarea class="form-control" id="inputMessage" placeholder="Message (optional)" maxlength="300"></textarea>
+                <textarea class="form-control" id="inputMessage" placeholder="How did you hear about Remember Thee? (optional)" maxlength="300"></textarea>
               </div>
               <div class="pt-3" id="error_message" hidden="true"></div>
               <div class="p-3">

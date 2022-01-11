@@ -59,6 +59,11 @@ form {
   font-size: 36px;
 }
 
+#hero-hook {
+  margin: 0 auto;
+  max-width: 670px;
+}
+
 #hero, #value {
   background-color: black;
   color: white;

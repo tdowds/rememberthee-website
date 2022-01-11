@@ -35,7 +35,7 @@ def sign_up():
 		<li>First Name: {firstName}</li>
 		<li>Last Name: {lastName}</li>
 		<li>Email: {email}</li>
-		<li>Message: {message}</li>
+		<li>Heard from: {message}</li>
 		<li>Browser: {browser}</li>
 	</ul>
 	""".format(**data)
