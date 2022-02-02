@@ -52,6 +52,10 @@ def sign_up():
 def add_verse():
 	return jsonify(success=True)
 
+@app.route("/filter", methods=['POST'])
+def filter():
+	return jsonify(success=True)
+
 @app.route("/read-verse", methods=['POST'])
 def read_verse():
 	return jsonify(success=True)
